@@ -1,0 +1,149 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <title>Privacy Policy | RedGrayFox WebLab</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <!-- Subir un nivel para CSS y Favicon -->
+        <link rel="stylesheet" href="../assets/css/main.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Rajdhani:wght@600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+        <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon.png" />
+    </head>
+    <body>
+        <canvas id="light-canvas"></canvas>
+
+        <div id="page-wrapper">
+
+            <!-- Header -->
+            <section id="header">
+                <div class="container">
+                    <div class="row aln-middle">
+                        <div class="col-12">
+                            <h1 style="position: relative; right: 5px;"><span>RED</span>GRAYFOX <span>WEB LAB</span></h1>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Banner -->
+            <section id="banner">
+                <div class="container">
+                    <div class="row aln-middle">
+                        <div class="col-12">
+                            <h2 class="banner-title" style="text-align: center;">Privacy Policy</h2>
+                            <p style="text-align: center; max-width: 800px; margin: 0 auto 20px auto;">
+                                Transparency and data protection across our digital platform.
+                            </p>
+                            <div class="banner-actions" style="justify-content: center;">
+                                <a href="index.html" class="share-btn" title="Back to Home" style="color: #00f2ea; border-color: #00f2ea; width: auto; padding: 0 15px;">
+                                    <i class="fas fa-arrow-left"></i> <span style="margin-left: 8px;">Back to Home</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Content -->
+            <section style="padding: 40px 0;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div style="background: rgba(15, 15, 25, 0.85); border: 1px solid #00f2ea; border-radius: 12px; padding: 30px; box-shadow: 0 0 15px rgba(0, 242, 234, 0.2); color: #e0e0e0; line-height: 1.7;">
+                                
+                                <h3 style="color: #00f2ea; margin-bottom: 10px;">1. Information We Collect</h3>
+                                <p>At <strong>RedGrayFox WebLab</strong>, we respect your privacy. We do not collect personally identifiable information unless voluntarily provided by contacting us via email or WhatsApp.</p>
+
+                                <h3 style="color: #00f2ea; margin-top: 25px; margin-bottom: 10px;">2. Cookies and Third-Party Advertising (Google AdSense)</h3>
+                                <p>This site uses third-party services that may utilize <em>cookies</em> to personalize content and analyze traffic:</p>
+                                <ul style="margin-left: 20px;">
+                                    <li><strong>Google AdSense:</strong> As a third-party vendor, Google uses cookies to serve ads based on prior visits to this or other websites.</li>
+                                    <li>Users may opt out of personalized advertising by visiting <a href="https://www.google.com/settings/ads" target="_blank" style="color: #00f2ea;">Google Ads Settings</a>.</li>
+                                    <li><strong>Giscus / GitHub:</strong> Our forum integration relies on GitHub's public API to manage community interactions securely.</li>
+                                </ul>
+
+                                <h3 style="color: #00f2ea; margin-top: 25px; margin-bottom: 10px;">3. External Links</h3>
+                                <p>We do not sell or rent user data. We are not responsible for the privacy practices of external third-party sites linked on our platform.</p>
+
+                                <h3 style="color: #00f2ea; margin-top: 25px; margin-bottom: 10px;">4. Contact Us</h3>
+                                <p>For any questions regarding this policy, feel free to reach out to: <a href="mailto:redgrayfoxweblab@gmail.com" style="color: #00f2ea;">redgrayfoxweblab@gmail.com</a>.</p>
+
+                                <p style="margin-top: 30px; font-size: 0.85rem; color: #888;">Last updated: September 2026</p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer id="footer">
+                <div class="container">
+                    <h2>We Build Your Digital Presence</h2>
+                </div>
+            </footer>
+
+            <div id="copyright" style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
+                <div>&copy; 2026 RedGrayFox WebLab. All rights reserved.</div>
+            </div>
+
+        </div>
+
+        <script>
+            const canvas = document.getElementById('light-canvas');
+            const ctx = canvas.getContext('2d');
+            function resizeCanvas() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+            window.addEventListener('resize', resizeCanvas);
+            resizeCanvas();
+
+            class LightComet {
+                constructor() { this.reset(); }
+                reset() {
+                    const direction = Math.floor(Math.random() * 4);
+                    this.speed = Math.random() * 5 + 6;
+                    this.length = Math.random() * 40 + 60;
+                    if (direction === 0) { this.x = -150; this.y = Math.random() * canvas.height; this.vx = this.speed; this.vy = 0; }
+                    else if (direction === 1) { this.x = canvas.width + 150; this.y = Math.random() * canvas.height; this.vx = -this.speed; this.vy = 0; }
+                    else if (direction === 2) { this.x = Math.random() * canvas.width; this.y = -150; this.vx = 0; this.vy = this.speed; }
+                    else { this.x = Math.random() * canvas.width; this.y = canvas.height + 150; this.vx = 0; this.vy = -this.speed; }
+                    this.color = Math.random() > 0.5 ? '239, 68, 68' : '0, 242, 234';
+                    this.active = true;
+                }
+                update() {
+                    this.x += this.vx; this.y += this.vy;
+                    if (this.x < -200 || this.x > canvas.width + 200 || this.y < -200 || this.y > canvas.height + 200) this.active = false;
+                }
+                draw() {
+                    let tailX = this.vx > 0 ? this.x - this.length : (this.vx < 0 ? this.x + this.length : this.x);
+                    let tailY = this.vy > 0 ? this.y - this.length : (this.vy < 0 ? this.y + this.length : this.y);
+                    const gradient = ctx.createLinearGradient(this.x, this.y, tailX, tailY);
+                    gradient.addColorStop(0, `rgba(${this.color}, 1)`);
+                    gradient.addColorStop(0.3, `rgba(${this.color}, 0.5)`);
+                    gradient.addColorStop(1, `rgba(${this.color}, 0)`);
+                    ctx.beginPath(); ctx.moveTo(this.x, this.y); ctx.lineTo(tailX, tailY);
+                    ctx.strokeStyle = gradient; ctx.lineWidth = 2; ctx.lineCap = 'round'; ctx.stroke();
+                }
+            }
+
+            let currentComet = null;
+            let nextLaunchTime = Date.now() + 1000;
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                const now = Date.now();
+                if (!currentComet && now > nextLaunchTime) {
+                    currentComet = new LightComet();
+                    nextLaunchTime = now + Math.random() * 2000 + 2500;
+                }
+                if (currentComet) {
+                    currentComet.update(); currentComet.draw();
+                    if (!currentComet.active) currentComet = null;
+                }
+                requestAnimationFrame(animate);
+            }
+            animate();
+        </script>
+    </body>
+</html>
